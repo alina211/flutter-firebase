@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:form_flutter_09e1/update_data.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:uuid/uuid.dart';
@@ -123,7 +124,12 @@ class _AddDataState extends State<AddData> {
                           width: 100,
                           child: Row(
                             children: [
-                              IconButton(onPressed: (){}, icon: Icon(Icons.update)),
+                              IconButton(onPressed: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => UpdateData(
+                                    uID: uID,
+                                    uName: uName,
+                                    uImage: uImage),));
+                              }, icon: Icon(Icons.update)),
                               IconButton(onPressed: ()async{
                                 try{
                                  await FirebaseFirestore.instance.collection("uimage").doc(uID).delete();
