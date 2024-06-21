@@ -7,6 +7,8 @@ import 'package:form_flutter_09e1/login_screen.dart';
 import 'package:form_flutter_09e1/splash_screen.dart';
 import 'package:uuid/uuid.dart';
 
+import 'add_data.dart';
+
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: AddData(),
     );
   }
 }
